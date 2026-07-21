@@ -1,0 +1,928 @@
+:root {
+    color-scheme: light;
+    --cream: #f7efe8;
+    --cream-dark: #efe0d2;
+    --brown: #7a4f2f;
+    --brown-dark: #4c2f1d;
+    --wood: #b98c5f;
+    --white: #fffdf9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #fcf6ee 0%, var(--cream) 100%);
+    color: var(--brown-dark);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    margin: 0;
+}
+
+.pageheader {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 0.5rem;
+    text-align: center;
+}
+
+.logo {
+    margin: 0 auto 1rem;
+    width: 120px;
+}
+
+.siteTitle {
+    font-size: 2.6rem;
+    color: var(--brown-dark);
+    margin-bottom: 0.75rem;
+}
+
+.navlinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.navlinks a {
+    text-decoration: none;
+    color: var(--brown-dark);
+    background: rgba(255, 255, 255, 0.85);
+    padding: 0.85rem 1.2rem;
+    border-radius: 999px;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.navlinks a:hover {
+    background: var(--cream-dark);
+    transform: translateY(-1px);
+}
+
+.hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.2fr);
+    gap: 2rem;
+    align-items: center;
+    padding: 0 1rem 2rem;
+}
+
+.heroimage {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(76, 47, 29, 0.16);
+}
+
+.herotext h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.herotext p {
+    color: #5f4631;
+    font-size: 1.03rem;
+    margin: 0;
+}
+
+.section-title {
+    text-align: center;
+    margin: 2rem 0 1rem;
+    font-size: 2rem;
+}
+
+.carousel {
+    max-width: 1100px;
+    margin: 0 auto 2.5rem;
+    padding: 0 1rem;
+}
+
+.carousel input {
+    display: none;
+}
+
+.carousel-inner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(76, 47, 29, 0.16);
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.slides {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1rem;
+}
+
+.slide {
+    display: none;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+.slide img {
+    width: 100%;
+    min-height: 180px;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(76, 47, 29, 0.14);
+}
+
+/* spacing of the join our force*/
+.join-section {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 1rem;
+}
+/*white border for the join our forces*/
+.join-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(76, 47, 29, 0.12);
+}
+
+.join-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  object-fit: cover;
+}
+/*font size and colour of the paragraph*/
+.join-content h2 {
+  font-size: 2.6rem;
+  color: var(--brown-dark);
+  margin-bottom: 0.75rem;
+}
+
+.join-content p {
+  color: #5f4631;
+  font-size: 1.03rem;
+  line-height: 1.6;
+}
+/* the join our force button*/
+.join-btn {
+  display: inline-block;
+  margin-top: 1.25rem;
+  background: var(--brown);
+  color: var(--white);
+  padding: 0.95rem 1.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+/*hover effect for the join our force button*/
+@media (max-width: 900px) {
+  .join-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .join-content h2 {
+    font-size: 2rem;
+  }
+
+  .join-btn {
+    display: block;
+    margin: 1rem auto 0;
+  }
+}
+/* show the right slide*/
+#slide1:checked ~ .carousel-inner .slide1,
+#slide2:checked ~ .carousel-inner .slide2,
+#slide3:checked ~ .carousel-inner .slide3 {
+    display: grid;
+}
+
+.carouselcontrols {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+}
+
+.carouselcontrols label {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+    display: grid;
+    place-items: center;
+    font-size: 0.75rem;
+    color: transparent;
+}
+
+.carouselcontrols label:hover {
+    transform: scale(1.1);
+}
+
+#slide1:checked ~ .carouselcontrols label[for="slide1"],
+#slide2:checked ~ .carouselcontrols label[for="slide2"],
+#slide3:checked ~ .carouselcontrols label[for="slide3"] {
+    background: var(--brown);
+    color: white;
+}
+/* contact form formating and colour*/
+.contactFooter {
+    background: linear-gradient(135deg, #b58b6a 0%, #9b6d4e 100%);
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 3.5rem 5%;
+    margin-top: 2rem;
+}
+
+.contactTitleLine {
+    width: 95px;
+    height: 2px;
+    background: #fff;
+    margin-bottom: 1.5rem;
+}
+/*spacing for the svgs*/
+.contactDescription {
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 520px;
+    margin-bottom: 4rem;
+    color: #f6e7dc;
+}
+/*space between the svgs*/
+.contactInfo {
+    display: grid;
+    gap: 2rem;
+}
+/*allignment of the svgs and text*/
+.contactInfoItem {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+/*size and colour of the svgs*/
+.contactIcon {
+    width: 24px;
+    height: 24px;
+    color: #fff;
+    flex-shrink: 0;
+}
+/*styling of the text*/
+.contactName {
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.contactPhone,
+.contactSub {
+    font-size: 0.95rem;
+    color: #f6e7dc;
+}
+
+.formGroup {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.formGroup label {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+/*styling of the input fields and textarea*/
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    border-radius: 14px;
+    border: none;
+    background: #fff;
+    color: #4c2f1d;
+    font-size: 0.95rem;
+    resize: vertical;
+}
+/*styling of the submit button*/
+.submitBtn {
+    background: #fff;
+    color: #4c2f1d;
+    border: none;
+    border-radius: 999px;
+    padding: 0.95rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+.submitBtn:hover {
+    background: #f4e8dd;
+    transform: translateY(-1px);
+}
+/* thank you page styling */
+.thankyouSection {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(180deg, #fcf6ee 0%, #f4e0ce 100%);
+}
+/*white boardwer styling for the thank you page*/
+.thankyouCard {
+    max-width: 620px;
+    width: 100%;
+    padding: 2.5rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 26px;
+    box-shadow: 0 24px 60px rgba(76, 47, 29, 0.15);
+    text-align: center;
+}
+/* thank you page heading styling*/
+.thankyouCard h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--brown-dark);
+}
+
+.thankyouCard p {
+    color: #5f4631;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.75rem;
+}
+/*styling of the thank you button*/
+.thankyouCard a {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--brown);
+    color: var(--white);
+    padding: 0.95rem 1.8rem;
+    border-radius: 999px;
+    box-shadow: 0 12px 24px rgba(76, 47, 29, 0.16);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.thankyouCard a:hover {
+    background: var(--wood);
+    transform: translateY(-1px);
+}
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .contactFooter {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .siteTitle {
+        font-size: 2rem;
+    }
+
+    .navlinks {
+        gap: 0.5rem;
+    }
+
+    .carousel-inner {
+        border-radius: 16px;
+    }
+
+    .slide {
+        grid-template-columns: 1fr;
+    }
+
+    .carouselcontrols {
+        gap: 0.35rem;
+    }
+}
+/*NAVBAR*/
+.heroheader {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+.header-photo {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+/* NAVBAR STYLING */
+.navbar {
+    background-color: #49301a;
+    background-image: url("images/nav bar texture.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+/* spacing and removal of bullents for the navbar links*/
+ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0;
+    margin: 0;
+    gap: 50px;
+}
+/* colour transitions*/
+ul li a {
+    text-decoration: none;
+    font-family: "CG Times", "Times New Roman", Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+
+}
+/* underline effect for the navbar links*/
+ul li a::after{
+    content: '';
+    position: absolute;
+    display: block;
+    height: 0.2em;
+    width: 0%;
+    background-color: #c5a880;
+    transition: width 0.3s ease-in-out;
+}
+
+ul li a:hover::after{
+    width: 100%;
+}
+
+ul li a:hover{
+    color: #c5a880;
+}
+
+ul li a.active {
+    color: #c5a880;
+}
+
+ul li a.active::after {
+    width: 100%;
+}
+
+/*THE SHA CAFE — Job Application Page*/
+
+:root {
+  --color-bg-warm: #e2d3bd;
+  --color-bg-warm-dark: #d8c6ab;
+  --color-brown-900: #3a2416;
+  --color-brown-800: #4a2f1c;
+  --color-brown-700: #5c3a22;
+  --color-brown-600: #6b4226;
+  --color-brown-accent: #7a4a26;
+  --color-cream: #faf7f2;
+  --color-cream-card: #fbf8f3;
+  --color-input-border: #e3dccf;
+  --color-input-bg: #fdfcfa;
+  --color-placeholder: #ada08c;
+  --color-label: #3a2b1d;
+  --color-footer-bg: #cdb99a;
+  --color-focus-ring: #8a5a2e;
+
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --radius-lg: 20px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+}
+/*tells browser to smoothly animated*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-brown-900);
+  background: var(--color-bg-warm);
+}
+
+img, svg {
+  display: block;
+}
+
+a {
+  color: var(--color-brown-accent);
+}
+
+/* gives the hero section a background colour and spacing*/
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 5vw 5rem;
+  background: linear-gradient(180deg, var(--color-bg-warm) 0%, var(--color-bg-warm-dark) 100%);
+  overflow: hidden;
+}
+/* gives the hero image a border radius and shadow*/
+.hero__illustration {
+  width: 100%;
+  height: 100%;
+}
+/* gives the hero content a proper spacing and alignment*/
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 28rem;
+  padding-right: 2rem;
+  padding-bottom: 34vh;
+}
+/* gives the hero title a proper font size and colour*/
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 4vw, 3.15rem);
+  line-height: 1.15;
+  margin: 0 0 1.25rem;
+  color: var(--color-brown-900);
+}
+/* colour for the sha cafe title*/
+.hero__title-accent {
+  color: var(--color-brown-700);
+}
+/* line for title and paragraph*/
+.hero__divider {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+/* line for title and paragraph*/
+.hero__divider-line {
+  width: 2.5rem;
+  height: 2px;
+  background: var(--color-brown-accent);
+}
+
+.hero__lede {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-brown-800);
+  max-width: 24rem;
+  margin: 0 0 2.25rem;
+}
+/* gives the hero benefits a proper spacing and removes bullets*/
+.hero__benefits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+/* gives the hero benefits a proper spacing and alignment*/
+.hero__benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.hero__benefit-icon {
+  flex: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: rgba(122, 74, 38, 0.14);
+  color: var(--color-brown-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__benefit-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-brown-800);
+}
+
+.hero__benefit-text strong {
+  font-size: 1rem;
+  color: var(--color-brown-900);
+}
+
+/*border for the form*/
+.form-card {
+  background: var(--color-cream-card);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 60px -15px rgba(58, 36, 22, 0.35);
+  padding: 2.75rem 3rem 3rem;
+  max-width: 42rem;
+  margin-left: auto;
+}
+/* gives the form title a proper font size and colour*/
+.form-card__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.9rem;
+  text-align: center;
+  margin: 0 0 0.4rem;
+  color: var(--color-brown-900);
+  position: relative;
+  padding-bottom: 0.85rem;
+}
+/*a line under the job application*/
+.form-card__title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3rem;
+  height: 3px;
+  background: var(--color-brown-accent);
+  border-radius: 2px;
+}
+/*gives the form the font size and colour*/
+.form-card__subtitle {
+  text-align: center;
+  color: #7a6a57;
+  font-size: 0.92rem;
+  margin: 0 0 2rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem 1.5rem;
+}
+
+/* proper spacing of the te xtarea*/
+.field--full {
+  grid-column: 1 / -1;
+}
+/* bolds the label of the textarea*/
+.field label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-label);
+}
+
+.required {
+  color: #b5482f;
+}
+/* give font size and colour to the input fields and textarea*/
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--color-brown-900);
+  background: var(--color-input-bg);
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-md);
+  padding: 0.7rem 0.9rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-placeholder);
+}
+/* gives the textarea a proper height and font size*/ 
+textarea {
+  resize: vertical;
+  min-height: 3.2rem;
+  font-family: var(--font-body);
+}
+
+/* Custom select chevron */
+.select-wrap {
+  position: relative;
+}
+/* to add aroow for selection*/
+.select-wrap select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.4rem;
+  cursor: pointer;
+}
+
+.select-wrap::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-right: 2px solid var(--color-brown-700);
+  border-bottom: 2px solid var(--color-brown-700);
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}
+
+/* File upload */
+.file-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+/* gives the file upload button a proper spacing and colour*/
+.file-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-input-bg);
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-brown-800);
+  cursor: pointer;
+}
+/*Visually hides the actual file input (accessible but invisible).*/
+.file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.file-status {
+  font-size: 0.88rem;
+  color: #7a6a57;
+}
+
+.file-hint {
+  font-size: 0.8rem;
+  color: #9a8b76;
+  margin-left: auto;
+}
+
+/* Consent checkbox */
+.field--consent {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+/* Adjust the checkbox size and spacing, and give it the brown*/
+.field--consent input[type="checkbox"] {
+  margin-top: 0.2rem;
+  width: 1.05rem;
+  height: 1.05rem;
+  accent-color: var(--color-brown-700);
+  flex: none;
+}
+
+.field--consent label {
+  font-weight: 400;
+  font-size: 0.88rem;
+  color: var(--color-brown-800);
+}
+
+.field--consent a {
+  text-decoration: underline;
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: var(--color-brown-900);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.95rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+  background: var(--color-brown-800);
+}
+
+.submit-btn:active {
+  transform: translateY(1px);
+}
+
+/* FOOTER */
+
+.site-footer {
+  background: var(--color-footer-bg);
+  color: var(--color-brown-900);
+  padding: 1.75rem 5vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+}
+/* gives a proper spacing for logo and link*/
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+/* make footer links black*/
+.footer-item a {
+  color: var(--color-brown-900);
+  text-decoration: none;
+}
+
+/*RESPONSIVE*/
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 3rem 6vw 3rem;
+  }
+
+  .hero__content {
+    max-width: none;
+    padding-right: 0;
+  }
+
+  .form-card {
+    margin-left: 0;
+    max-width: none;
+    padding: 2rem 1.5rem 2.25rem;
+  }
+}
+/* makes the form and footer responsive for mobile devices*/
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .file-hint {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/*Reduced motion*/
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}

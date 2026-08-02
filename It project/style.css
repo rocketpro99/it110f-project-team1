@@ -20,6 +20,81 @@ body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
 }
+/*NAVBAR*/
+.heroheader {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+.header-photo {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+/* NAVBAR STYLING */
+.navbar {
+    background-color: #49301a;
+    background-image: url("images/nav bar texture.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+/* spacing and removal of bullents for the navbar links*/
+ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0;
+    margin: 0;
+    gap: 50px;
+}
+/* colour transitions*/
+ul li a {
+    text-decoration: none;
+    font-family: "CG Times", "Times New Roman", Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+
+}
+/* underline effect for the navbar links*/
+ul li a::after{
+    content: '';
+    position: absolute;
+    display: block;
+    height: 0.2em;
+    width: 0%;
+    background-color: #c5a880;
+    transition: width 0.3s ease-in-out;
+}
+
+ul li a:hover::after{
+    width: 100%;
+}
+
+ul li a:hover{
+    color: #c5a880;
+}
+
+ul li a.active {
+    color: #c5a880;
+}
+
+ul li a.active::after {
+    width: 100%;
+}
 
 img {
     display: block;
@@ -144,70 +219,6 @@ h3 {
     min-height: 180px;
     border-radius: 14px;
     box-shadow: 0 12px 28px rgba(76, 47, 29, 0.14);
-}
-
-/* spacing of the join our force*/
-.join-section {
-  max-width: 1100px;
-  margin: 2.5rem auto;
-  padding: 1rem;
-}
-/*white border for the join our forces*/
-.join-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: center;
-  background: rgba(255,255,255,0.95);
-  border-radius: 20px;
-  padding: 1.5rem;
-  box-shadow: 0 20px 40px rgba(76, 47, 29, 0.12);
-}
-
-.join-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 18px;
-  object-fit: cover;
-}
-/*font size and colour of the paragraph*/
-.join-content h2 {
-  font-size: 2.6rem;
-  color: var(--brown-dark);
-  margin-bottom: 0.75rem;
-}
-
-.join-content p {
-  color: #5f4631;
-  font-size: 1.03rem;
-  line-height: 1.6;
-}
-/* the join our force button*/
-.join-btn {
-  display: inline-block;
-  margin-top: 1.25rem;
-  background: var(--brown);
-  color: var(--white);
-  padding: 0.95rem 1.8rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 700;
-}
-/*hover effect for the join our force button*/
-@media (max-width: 900px) {
-  .join-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .join-content h2 {
-    font-size: 2rem;
-  }
-
-  .join-btn {
-    display: block;
-    margin: 1rem auto 0;
-  }
 }
 /* show the right slide*/
 #slide1:checked ~ .carousel-inner .slide1,
@@ -341,6 +352,101 @@ h3 {
     background: #f4e8dd;
     transform: translateY(-1px);
 }
+/* spacing of the join our force*/
+.join-section {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 1rem;
+}
+/*white border for the join our forces*/
+.join-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(76, 47, 29, 0.12);
+}
+
+.join-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  object-fit: cover;
+}
+/*font size and colour of the paragraph*/
+.join-content h2 {
+  font-size: 2.6rem;
+  color: var(--brown-dark);
+  margin-bottom: 0.75rem;
+}
+
+.join-content p {
+  color: #5f4631;
+  font-size: 1.03rem;
+  line-height: 1.6;
+}
+/* the join our force button*/
+.join-btn {
+  display: inline-block;
+  margin-top: 1.25rem;
+  background: var(--brown);
+  color: var(--white);
+  padding: 0.95rem 1.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .contactFooter {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .siteTitle {
+        font-size: 2rem;
+    }
+
+    .navlinks {
+        gap: 0.5rem;
+    }
+
+    .carousel-inner {
+        border-radius: 16px;
+    }
+
+    .slide {
+        grid-template-columns: 1fr;
+    }
+
+    .carouselcontrols {
+        gap: 0.35rem;
+    }
+}
+/*hover effect for the join our force button*/
+@media (max-width: 900px) {
+  .join-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .join-content h2 {
+    font-size: 2rem;
+  }
+
+  .join-btn {
+    display: block;
+    margin: 1rem auto 0;
+  }
+}
+/*-------------end  of index.html styling------------------*/
 /* thank you page styling */
 .thankyouSection {
     min-height: 100vh;
@@ -389,115 +495,8 @@ h3 {
     background: var(--wood);
     transform: translateY(-1px);
 }
-@media (max-width: 900px) {
-    .hero {
-        grid-template-columns: 1fr;
-    }
-
-    .contactFooter {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 720px) {
-    .siteTitle {
-        font-size: 2rem;
-    }
-
-    .navlinks {
-        gap: 0.5rem;
-    }
-
-    .carousel-inner {
-        border-radius: 16px;
-    }
-
-    .slide {
-        grid-template-columns: 1fr;
-    }
-
-    .carouselcontrols {
-        gap: 0.35rem;
-    }
-}
-/*NAVBAR*/
-.heroheader {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: block;
-    overflow: hidden;
-}
-
-.header-photo {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-/* NAVBAR STYLING */
-.navbar {
-    background-color: #49301a;
-    background-image: url("images/nav bar texture.jpeg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-}
-/* spacing and removal of bullents for the navbar links*/
-ul {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    padding: 0;
-    margin-top: 0;
-    margin: 0;
-    gap: 50px;
-}
-/* colour transitions*/
-ul li a {
-    text-decoration: none;
-    font-family: "CG Times", "Times New Roman", Times, serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-    transition: color 0.3s ease-in-out;
-    position: relative;
-
-}
-/* underline effect for the navbar links*/
-ul li a::after{
-    content: '';
-    position: absolute;
-    display: block;
-    height: 0.2em;
-    width: 0%;
-    background-color: #c5a880;
-    transition: width 0.3s ease-in-out;
-}
-
-ul li a:hover::after{
-    width: 100%;
-}
-
-ul li a:hover{
-    color: #c5a880;
-}
-
-ul li a.active {
-    color: #c5a880;
-}
-
-ul li a.active::after {
-    width: 100%;
-}
-
+/*-------------end of thank you page styling------------------*/
 /*THE SHA CAFE — Job Application Page*/
-
 :root {
   --color-bg-warm: #e2d3bd;
   --color-bg-warm-dark: #d8c6ab;
@@ -533,11 +532,11 @@ body {
   color: var(--color-brown-900);
   background: var(--color-bg-warm);
 }
-
+/* removes the default margin and padding from all elements and sets the box-sizing to border-box*/
 img, svg {
   display: block;
 }
-
+/* removes the default underline from all links and sets the colour to brown accent*/
 a {
   color: var(--color-brown-accent);
 }
@@ -555,12 +554,12 @@ a {
   overflow: hidden;
 }
 /* gives the hero image a border radius and shadow*/
-.hero__illustration {
+.heroillustration {
   width: 100%;
   height: 100%;
 }
 /* gives the hero content a proper spacing and alignment*/
-.hero__content {
+.herocontent {
   position: relative;
   z-index: 1;
   max-width: 28rem;
@@ -568,7 +567,7 @@ a {
   padding-bottom: 34vh;
 }
 /* gives the hero title a proper font size and colour*/
-.hero__title {
+.herotitle {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(2.2rem, 4vw, 3.15rem);
@@ -577,24 +576,24 @@ a {
   color: var(--color-brown-900);
 }
 /* colour for the sha cafe title*/
-.hero__title-accent {
+.herotitle-accent {
   color: var(--color-brown-700);
 }
 /* line for title and paragraph*/
-.hero__divider {
+.herodivider {
   display: flex;
   align-items: center;
   gap: 0.6rem;
   margin-bottom: 1.5rem;
 }
 /* line for title and paragraph*/
-.hero__divider-line {
+.herodividerline {
   width: 2.5rem;
   height: 2px;
   background: var(--color-brown-accent);
 }
-
-.hero__lede {
+/* gives the hero paragraph a proper font size and colour*/
+.herostyling {
   font-size: 1.05rem;
   line-height: 1.6;
   color: var(--color-brown-800);
@@ -602,7 +601,7 @@ a {
   margin: 0 0 2.25rem;
 }
 /* gives the hero benefits a proper spacing and removes bullets*/
-.hero__benefits {
+.herobenefitstyling {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -611,13 +610,13 @@ a {
   gap: 1.35rem;
 }
 /* gives the hero benefits a proper spacing and alignment*/
-.hero__benefit {
+.hernobenefit {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
 }
 
-.hero__benefit-icon {
+.hernobenefiticon {
   flex: none;
   width: 2.75rem;
   height: 2.75rem;
@@ -629,7 +628,7 @@ a {
   justify-content: center;
 }
 
-.hero__benefit-text {
+.herobenefittext {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
@@ -638,13 +637,13 @@ a {
   color: var(--color-brown-800);
 }
 
-.hero__benefit-text strong {
+.herobenefittextStrong {
   font-size: 1rem;
   color: var(--color-brown-900);
 }
 
 /*border for the form*/
-.form-card {
+.formcard{
   background: var(--color-cream-card);
   border-radius: var(--radius-lg);
   box-shadow: 0 25px 60px -15px rgba(58, 36, 22, 0.35);
@@ -653,7 +652,7 @@ a {
   margin-left: auto;
 }
 /* gives the form title a proper font size and colour*/
-.form-card__title {
+.formcardTitle {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.9rem;
@@ -664,7 +663,7 @@ a {
   padding-bottom: 0.85rem;
 }
 /*a line under the job application*/
-.form-card__title::after {
+.formcardTitle::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -676,25 +675,25 @@ a {
   border-radius: 2px;
 }
 /*gives the form the font size and colour*/
-.form-card__subtitle {
+.formcardSubtitle {
   text-align: center;
   color: #7a6a57;
   font-size: 0.92rem;
   margin: 0 0 2rem;
 }
-
-.form-grid {
+/* gives the form a proper spacing and alignment*/
+.fromgrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.4rem 1.5rem;
 }
 
-/* proper spacing of the te xtarea*/
-.field--full {
+/* proper spacing of the textarea*/
+.fieldfull {
   grid-column: 1 / -1;
 }
 /* bolds the label of the textarea*/
-.field label {
+.fieldlabel {
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--color-label);
@@ -732,18 +731,18 @@ textarea {
 }
 
 /* Custom select chevron */
-.select-wrap {
+.selectwrap {
   position: relative;
 }
 /* to add aroow for selection*/
-.select-wrap select {
+.selectwrapSelect {
   appearance: none;
   -webkit-appearance: none;
   padding-right: 2.4rem;
   cursor: pointer;
 }
 
-.select-wrap::after {
+.selectwrap::after {
   content: "";
   position: absolute;
   right: 1rem;
@@ -757,14 +756,14 @@ textarea {
 }
 
 /* File upload */
-.file-row {
+.filerow {
   display: flex;
   align-items: center;
   gap: 0.9rem;
   flex-wrap: wrap;
 }
 /* gives the file upload button a proper spacing and colour*/
-.file-button {
+.filebutton {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -778,7 +777,7 @@ textarea {
   cursor: pointer;
 }
 /*Visually hides the actual file input (accessible but invisible).*/
-.file-input {
+.fileinput {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -790,25 +789,25 @@ textarea {
   border: 0;
 }
 
-.file-status {
+.filestatus {
   font-size: 0.88rem;
   color: #7a6a57;
 }
 
-.file-hint {
+.filehint {
   font-size: 0.8rem;
   color: #9a8b76;
   margin-left: auto;
 }
 
 /* Consent checkbox */
-.field--consent {
+.fieldconsent {
   flex-direction: row;
   align-items: flex-start;
   gap: 0.6rem;
 }
 /* Adjust the checkbox size and spacing, and give it the brown*/
-.field--consent input[type="checkbox"] {
+.fieldconsentInput[type="checkbox"] {
   margin-top: 0.2rem;
   width: 1.05rem;
   height: 1.05rem;
@@ -816,13 +815,13 @@ textarea {
   flex: none;
 }
 
-.field--consent label {
+.fieldconsentLabel {
   font-weight: 400;
   font-size: 0.88rem;
   color: var(--color-brown-800);
 }
 
-.field--consent a {
+.fieldconsent a {
   text-decoration: underline;
 }
 
@@ -855,7 +854,7 @@ textarea {
 
 /* FOOTER */
 
-.site-footer {
+.sitefooter {
   background: var(--color-footer-bg);
   color: var(--color-brown-900);
   padding: 1.75rem 5vw;
@@ -867,14 +866,14 @@ textarea {
   font-size: 0.9rem;
 }
 /* gives a proper spacing for logo and link*/
-.footer-item {
+.footeritem {
   display: flex;
   align-items: center;
   gap: 0.65rem;
 }
 
 /* make footer links black*/
-.footer-item a {
+.footeritem a {
   color: var(--color-brown-900);
   text-decoration: none;
 }
@@ -887,12 +886,12 @@ textarea {
     padding: 3rem 6vw 3rem;
   }
 
-  .hero__content {
+  .herocontent {
     max-width: none;
     padding-right: 0;
   }
 
-  .form-card {
+  .formcard{
     margin-left: 0;
     max-width: none;
     padding: 2rem 1.5rem 2.25rem;
@@ -900,16 +899,16 @@ textarea {
 }
 /* makes the form and footer responsive for mobile devices*/
 @media (max-width: 640px) {
-  .form-grid {
+  .fromgrid {
     grid-template-columns: 1fr;
   }
 
-  .file-hint {
+  .filehint {
     margin-left: 0;
     width: 100%;
   }
 
-  .site-footer {
+  .sitefooter {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -925,4 +924,152 @@ textarea {
   * {
     transition: none !important;
   }
+}
+/*------------END OF JOB APPLICATION PAGE STYLING------------------*/
+:root {
+  --cream: #fbf5eb;
+  --brown: #402714;
+  --gold: #9d7041;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--cream);
+  font-family: Georgia, serif;
+}
+
+/* Opening screen container */
+.logointro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #fffdf8 0%, #f8eee0 52%, #ead8c1 100%);
+  animation: introExit 1s ease-in-out 5.2s forwards;
+}
+
+/* Decorative warm glow circle behind logo */
+.logointro::before {
+  content: "";
+  position: absolute;
+  width: min(70vw, 700px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(157, 112, 65, 0.25);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 30px rgba(157, 112, 65, 0.04),
+    0 0 0 70px rgba(157, 112, 65, 0.025),
+    0 0 80px rgba(96, 55, 22, 0.16);
+  transform: scale(0);
+  animation: circleBloom 2.2s cubic-bezier(.16, 1, .3, 1) 0.15s forwards;
+}
+
+/* Logo container */
+.logowrap {
+  position: relative;
+  width: min(76vw, 620px);
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(28px) scale(0.88);
+  animation: logoEnter 1.6s cubic-bezier(.16, 1, .3, 1) 0.65s forwards;
+}
+
+/* The Logo Image */
+.logo {
+  display: block;
+  width: 70%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  /* Top to bottom reveal effect */
+  clip-path: inset(0 0 100% 0);
+  filter: drop-shadow(0 14px 22px rgba(64, 39, 20, 0.14));
+  animation: logoReveal 1.8s cubic-bezier(.65, 0, .35, 1) 0.9s forwards;
+}
+
+/* Shimmering shine overlay */
+.shine {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.shine::after {
+  content: "";
+  position: absolute;
+  top: -25%;
+  left: -80%;
+  width: 45%;
+  height: 150%;
+  transform: rotate(20deg);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 25%,
+    rgba(255, 247, 223, 0.85) 50%,
+    rgba(255, 255, 255, 0.05) 75%,
+    transparent 100%
+  );
+  animation: shimmer 1.3s ease-in-out 2.35s forwards;
+}
+/* Welcome text styling */
+.welcometext {
+  position: absolute;
+  bottom: -1.3rem;
+  left: 50%;
+  z-index: 4;
+  width: max-content;
+  transform: translateX(-50%) translateY(10px);
+  color: var(--brown);
+  font-family: Arial, sans-serif;
+  font-size: clamp(0.62rem, 1.2vw, 0.8rem);
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: welcomeAppear 1s ease 3.25s forwards;
+}
+/*Animation Keyframes*/
+
+@keyframes circleBloom {
+  0% { opacity: 0; transform: scale(0.35) rotate(-20deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+@keyframes logoEnter {
+  0% { opacity: 0; transform: translateY(28px) scale(0.88); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes logoReveal {
+  0% { clip-path: inset(0 0 100% 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes shimmer {
+  from { left: -80%; }
+  to { left: 140%; }
+}
+
+@keyframes sparkleAppear {
+  to { opacity: 1; }
+}
+
+@keyframes welcomeAppear {
+  to { opacity: 0.8; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes introExit {
+  0% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; pointer-events: none; }
 }

@@ -10,6 +10,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Opening logo animation screen -->
+  <section class="logointro" aria-hidden="true">
+    <div class="logowrap">
+      <img
+        class="logo"
+        src="images/THE SHA CAFE LOGO.png"
+        alt="The SHA Café logo"
+      />
+      <div class="shine"></div>
+      <p class="welcometext">Welcome to SHA Café</p>
+    </div>
+  </section>
+  <!-- websites content -->
     <header class="heroheader">
         <img src="images/Sha nav bar photo.jpeg" alt="The SHA Cafe banner" class="header-photo">
     </header>
@@ -120,7 +133,7 @@
             </div>
 
             <div class="contactRight">
-                <form id="contactForm" action="thankyou.html" method="get" novalidate>
+                <form id="contactForm" action="thankyou.html">
                     <div class="formGroup">
                         <label for="full-name">Full name</label>
                         <input type="text" id="full-name" name="full-name" placeholder="John Lim" required>
